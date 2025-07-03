@@ -1,0 +1,1311 @@
+TimeQuest Timing Analyzer report for sad
+Thu May 29 09:37:49 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; sad                                                               ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5AF256A7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 164.02 MHz ; 164.02 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -5.097 ; -108.712      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.460 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -71.285               ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                           ;
++--------+-------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                       ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.097 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 6.135      ;
+; -5.049 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 6.087      ;
+; -5.019 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 6.057      ;
+; -5.015 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 6.053      ;
+; -4.967 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 6.005      ;
+; -4.937 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.975      ;
+; -4.933 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.971      ;
+; -4.924 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.962      ;
+; -4.885 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.923      ;
+; -4.855 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.893      ;
+; -4.851 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.889      ;
+; -4.849 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.887      ;
+; -4.842 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.880      ;
+; -4.816 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.854      ;
+; -4.803 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.841      ;
+; -4.794 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.832      ;
+; -4.773 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.811      ;
+; -4.769 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.807      ;
+; -4.767 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.805      ;
+; -4.760 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.798      ;
+; -4.734 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.772      ;
+; -4.721 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.759      ;
+; -4.713 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.751      ;
+; -4.712 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.750      ;
+; -4.695 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.733      ;
+; -4.691 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.729      ;
+; -4.691 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.729      ;
+; -4.687 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.725      ;
+; -4.685 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.723      ;
+; -4.678 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.716      ;
+; -4.652 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.690      ;
+; -4.639 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.677      ;
+; -4.634 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.672      ;
+; -4.631 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.669      ;
+; -4.630 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.668      ;
+; -4.613 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.651      ;
+; -4.609 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.647      ;
+; -4.609 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.647      ;
+; -4.607 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.645      ;
+; -4.603 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.641      ;
+; -4.596 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.634      ;
+; -4.570 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.608      ;
+; -4.552 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.590      ;
+; -4.549 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.587      ;
+; -4.548 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.586      ;
+; -4.531 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.569      ;
+; -4.527 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.565      ;
+; -4.525 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.563      ;
+; -4.525 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.563      ;
+; -4.521 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.559      ;
+; -4.514 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.552      ;
+; -4.507 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.545      ;
+; -4.488 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.526      ;
+; -4.470 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.508      ;
+; -4.467 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.505      ;
+; -4.466 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.504      ;
+; -4.459 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.497      ;
+; -4.449 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.487      ;
+; -4.445 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.483      ;
+; -4.443 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.481      ;
+; -4.443 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.481      ;
+; -4.439 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.477      ;
+; -4.429 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.467      ;
+; -4.425 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.463      ;
+; -4.414 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.452      ;
+; -4.406 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.444      ;
+; -4.399 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.437      ;
+; -4.388 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.426      ;
+; -4.385 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.423      ;
+; -4.384 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.422      ;
+; -4.377 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.415      ;
+; -4.367 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.405      ;
+; -4.363 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.401      ;
+; -4.361 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.399      ;
+; -4.361 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.399      ;
+; -4.347 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.385      ;
+; -4.334 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.372      ;
+; -4.332 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.370      ;
+; -4.319 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.357      ;
+; -4.317 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.355      ;
+; -4.306 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.344      ;
+; -4.303 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.341      ;
+; -4.285 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.323      ;
+; -4.281 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.319      ;
+; -4.279 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.317      ;
+; -4.279 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.317      ;
+; -4.271 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.309      ;
+; -4.259 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.297      ;
+; -4.256 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.294      ;
+; -4.252 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.290      ;
+; -4.250 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.288      ;
+; -4.241 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.279      ;
+; -4.237 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.275      ;
+; -4.235 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.273      ;
+; -4.226 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.264      ;
+; -4.224 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.262      ;
+; -4.204 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.242      ;
+; -4.197 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.235      ;
+; -4.197 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.235      ;
+; -4.189 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.227      ;
++--------+-------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                            ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                        ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.460 ; sad_bc:bc_inst|state.S0                          ; sad_bc:bc_inst|state.S0                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.756      ;
+; 0.653 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.949      ;
+; 0.654 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; sad_bc:bc_inst|state.S3                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
+; 0.656 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; sad_bc:bc_inst|state.S5                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.658 ; sad_bc:bc_inst|state.S3                          ; sad_bc:bc_inst|state.S4                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.954      ;
+; 0.894 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.190      ;
+; 0.895 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.191      ;
+; 0.895 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.191      ;
+; 0.897 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.193      ;
+; 0.898 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.194      ;
+; 0.899 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.195      ;
+; 0.921 ; sad_bc:bc_inst|state.S0                          ; sad_bc:bc_inst|state.S1                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.217      ;
+; 0.951 ; sad_bc:bc_inst|state.S5                          ; sad_bc:bc_inst|state.S0                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.247      ;
+; 0.982 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.278      ;
+; 0.984 ; sad_bc:bc_inst|state.S2                          ; sad_bc:bc_inst|state.S5                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.280      ;
+; 1.002 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.006 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.007 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.303      ;
+; 1.008 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.304      ;
+; 1.011 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.307      ;
+; 1.012 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.012 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.013 ; sad_bc:bc_inst|state.S2                          ; sad_bc:bc_inst|state.S3                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
+; 1.034 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.330      ;
+; 1.036 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.332      ;
+; 1.036 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.332      ;
+; 1.041 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.337      ;
+; 1.043 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.339      ;
+; 1.043 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.339      ;
+; 1.052 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.348      ;
+; 1.053 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.053 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.053 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.053 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.055 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.351      ;
+; 1.057 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.057 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.182 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.193 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.193 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.193 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.193 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.193 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.193 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.193 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.230 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.526      ;
+; 1.257 ; sad_bc:bc_inst|state.S4                          ; sad_bc:bc_inst|state.S2                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.553      ;
+; 1.279 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.575      ;
+; 1.286 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.582      ;
+; 1.287 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.583      ;
+; 1.377 ; sad_bc:bc_inst|state.S1                          ; sad_bc:bc_inst|state.S2                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.673      ;
+; 1.449 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.745      ;
+; 1.454 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.750      ;
+; 1.455 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.751      ;
+; 1.458 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.754      ;
+; 1.458 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.754      ;
+; 1.459 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.755      ;
+; 1.459 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.755      ;
+; 1.500 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.796      ;
+; 1.501 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.797      ;
+; 1.501 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.797      ;
+; 1.501 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.797      ;
+; 1.501 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.797      ;
+; 1.501 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.797      ;
+; 1.505 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.801      ;
+; 1.505 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.801      ;
+; 1.531 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.827      ;
+; 1.536 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.832      ;
+; 1.537 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.833      ;
+; 1.540 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.836      ;
+; 1.540 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.836      ;
+; 1.541 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.837      ;
+; 1.541 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.837      ;
+; 1.582 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.878      ;
+; 1.583 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.879      ;
+; 1.583 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.879      ;
+; 1.583 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.879      ;
+; 1.587 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.613 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.909      ;
+; 1.618 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.914      ;
+; 1.619 ; sad_bc:bc_inst|state.S4                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.619 ; sad_bc:bc_inst|state.S4                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.619 ; sad_bc:bc_inst|state.S4                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.619 ; sad_bc:bc_inst|state.S4                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.619 ; sad_bc:bc_inst|state.S4                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.619 ; sad_bc:bc_inst|state.S4                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.619 ; sad_bc:bc_inst|state.S4                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.622 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.918      ;
+; 1.622 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.918      ;
+; 1.623 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.919      ;
+; 1.664 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.665 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.961      ;
+; 1.665 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.961      ;
+; 1.669 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.965      ;
+; 1.681 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.977      ;
+; 1.695 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.991      ;
+; 1.700 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.996      ;
+; 1.704 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.000      ;
+; 1.704 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.000      ;
+; 1.705 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.001      ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S0                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S0                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S1                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S1                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S2                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S2                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S3                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S3                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S4                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S4                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S5                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S5                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[2]  ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; enable         ; clk        ; 3.944  ; 3.944  ; Rise       ; clk             ;
+; sample_can[*]  ; clk        ; 4.310  ; 4.310  ; Rise       ; clk             ;
+;  sample_can[0] ; clk        ; 3.501  ; 3.501  ; Rise       ; clk             ;
+;  sample_can[1] ; clk        ; -0.033 ; -0.033 ; Rise       ; clk             ;
+;  sample_can[2] ; clk        ; 3.833  ; 3.833  ; Rise       ; clk             ;
+;  sample_can[3] ; clk        ; 3.523  ; 3.523  ; Rise       ; clk             ;
+;  sample_can[4] ; clk        ; 4.310  ; 4.310  ; Rise       ; clk             ;
+;  sample_can[5] ; clk        ; 3.523  ; 3.523  ; Rise       ; clk             ;
+;  sample_can[6] ; clk        ; 4.250  ; 4.250  ; Rise       ; clk             ;
+;  sample_can[7] ; clk        ; 4.296  ; 4.296  ; Rise       ; clk             ;
+; sample_ori[*]  ; clk        ; 4.588  ; 4.588  ; Rise       ; clk             ;
+;  sample_ori[0] ; clk        ; 4.144  ; 4.144  ; Rise       ; clk             ;
+;  sample_ori[1] ; clk        ; 0.092  ; 0.092  ; Rise       ; clk             ;
+;  sample_ori[2] ; clk        ; 4.276  ; 4.276  ; Rise       ; clk             ;
+;  sample_ori[3] ; clk        ; 4.588  ; 4.588  ; Rise       ; clk             ;
+;  sample_ori[4] ; clk        ; 4.306  ; 4.306  ; Rise       ; clk             ;
+;  sample_ori[5] ; clk        ; 4.572  ; 4.572  ; Rise       ; clk             ;
+;  sample_ori[6] ; clk        ; 4.283  ; 4.283  ; Rise       ; clk             ;
+;  sample_ori[7] ; clk        ; 3.919  ; 3.919  ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; enable         ; clk        ; -3.686 ; -3.686 ; Rise       ; clk             ;
+; sample_can[*]  ; clk        ; 0.290  ; 0.290  ; Rise       ; clk             ;
+;  sample_can[0] ; clk        ; -3.244 ; -3.244 ; Rise       ; clk             ;
+;  sample_can[1] ; clk        ; 0.290  ; 0.290  ; Rise       ; clk             ;
+;  sample_can[2] ; clk        ; -3.576 ; -3.576 ; Rise       ; clk             ;
+;  sample_can[3] ; clk        ; -3.266 ; -3.266 ; Rise       ; clk             ;
+;  sample_can[4] ; clk        ; -4.053 ; -4.053 ; Rise       ; clk             ;
+;  sample_can[5] ; clk        ; -3.266 ; -3.266 ; Rise       ; clk             ;
+;  sample_can[6] ; clk        ; -3.993 ; -3.993 ; Rise       ; clk             ;
+;  sample_can[7] ; clk        ; -4.039 ; -4.039 ; Rise       ; clk             ;
+; sample_ori[*]  ; clk        ; 0.165  ; 0.165  ; Rise       ; clk             ;
+;  sample_ori[0] ; clk        ; -3.887 ; -3.887 ; Rise       ; clk             ;
+;  sample_ori[1] ; clk        ; 0.165  ; 0.165  ; Rise       ; clk             ;
+;  sample_ori[2] ; clk        ; -4.019 ; -4.019 ; Rise       ; clk             ;
+;  sample_ori[3] ; clk        ; -4.331 ; -4.331 ; Rise       ; clk             ;
+;  sample_ori[4] ; clk        ; -4.049 ; -4.049 ; Rise       ; clk             ;
+;  sample_ori[5] ; clk        ; -4.315 ; -4.315 ; Rise       ; clk             ;
+;  sample_ori[6] ; clk        ; -4.026 ; -4.026 ; Rise       ; clk             ;
+;  sample_ori[7] ; clk        ; -3.662 ; -3.662 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  address[0]    ; clk        ; 6.805 ; 6.805 ; Rise       ; clk             ;
+;  address[1]    ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+;  address[2]    ; clk        ; 6.825 ; 6.825 ; Rise       ; clk             ;
+;  address[3]    ; clk        ; 7.086 ; 7.086 ; Rise       ; clk             ;
+;  address[4]    ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  address[5]    ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+; done           ; clk        ; 6.796 ; 6.796 ; Rise       ; clk             ;
+; read_mem       ; clk        ; 7.260 ; 7.260 ; Rise       ; clk             ;
+; sad_value[*]   ; clk        ; 7.156 ; 7.156 ; Rise       ; clk             ;
+;  sad_value[0]  ; clk        ; 7.043 ; 7.043 ; Rise       ; clk             ;
+;  sad_value[1]  ; clk        ; 7.112 ; 7.112 ; Rise       ; clk             ;
+;  sad_value[2]  ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
+;  sad_value[3]  ; clk        ; 7.117 ; 7.117 ; Rise       ; clk             ;
+;  sad_value[4]  ; clk        ; 7.108 ; 7.108 ; Rise       ; clk             ;
+;  sad_value[5]  ; clk        ; 7.074 ; 7.074 ; Rise       ; clk             ;
+;  sad_value[6]  ; clk        ; 6.798 ; 6.798 ; Rise       ; clk             ;
+;  sad_value[7]  ; clk        ; 6.805 ; 6.805 ; Rise       ; clk             ;
+;  sad_value[8]  ; clk        ; 7.086 ; 7.086 ; Rise       ; clk             ;
+;  sad_value[9]  ; clk        ; 6.830 ; 6.830 ; Rise       ; clk             ;
+;  sad_value[10] ; clk        ; 7.049 ; 7.049 ; Rise       ; clk             ;
+;  sad_value[11] ; clk        ; 7.156 ; 7.156 ; Rise       ; clk             ;
+;  sad_value[12] ; clk        ; 6.726 ; 6.726 ; Rise       ; clk             ;
+;  sad_value[13] ; clk        ; 6.793 ; 6.793 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+;  address[0]    ; clk        ; 6.805 ; 6.805 ; Rise       ; clk             ;
+;  address[1]    ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+;  address[2]    ; clk        ; 6.825 ; 6.825 ; Rise       ; clk             ;
+;  address[3]    ; clk        ; 7.086 ; 7.086 ; Rise       ; clk             ;
+;  address[4]    ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  address[5]    ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+; done           ; clk        ; 6.796 ; 6.796 ; Rise       ; clk             ;
+; read_mem       ; clk        ; 7.260 ; 7.260 ; Rise       ; clk             ;
+; sad_value[*]   ; clk        ; 6.726 ; 6.726 ; Rise       ; clk             ;
+;  sad_value[0]  ; clk        ; 7.043 ; 7.043 ; Rise       ; clk             ;
+;  sad_value[1]  ; clk        ; 7.112 ; 7.112 ; Rise       ; clk             ;
+;  sad_value[2]  ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
+;  sad_value[3]  ; clk        ; 7.117 ; 7.117 ; Rise       ; clk             ;
+;  sad_value[4]  ; clk        ; 7.108 ; 7.108 ; Rise       ; clk             ;
+;  sad_value[5]  ; clk        ; 7.074 ; 7.074 ; Rise       ; clk             ;
+;  sad_value[6]  ; clk        ; 6.798 ; 6.798 ; Rise       ; clk             ;
+;  sad_value[7]  ; clk        ; 6.805 ; 6.805 ; Rise       ; clk             ;
+;  sad_value[8]  ; clk        ; 7.086 ; 7.086 ; Rise       ; clk             ;
+;  sad_value[9]  ; clk        ; 6.830 ; 6.830 ; Rise       ; clk             ;
+;  sad_value[10] ; clk        ; 7.049 ; 7.049 ; Rise       ; clk             ;
+;  sad_value[11] ; clk        ; 7.156 ; 7.156 ; Rise       ; clk             ;
+;  sad_value[12] ; clk        ; 6.726 ; 6.726 ; Rise       ; clk             ;
+;  sad_value[13] ; clk        ; 6.793 ; 6.793 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.184 ; -12.931       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.203 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -58.380               ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                           ;
++--------+-------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                       ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.184 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.214      ;
+; -1.170 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.200      ;
+; -1.153 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.183      ;
+; -1.150 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.180      ;
+; -1.136 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.166      ;
+; -1.119 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.149      ;
+; -1.116 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.146      ;
+; -1.102 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.132      ;
+; -1.094 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.124      ;
+; -1.085 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.115      ;
+; -1.082 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.112      ;
+; -1.074 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.104      ;
+; -1.068 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.098      ;
+; -1.060 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.090      ;
+; -1.055 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.085      ;
+; -1.051 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.081      ;
+; -1.048 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.078      ;
+; -1.040 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.070      ;
+; -1.037 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.067      ;
+; -1.034 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.064      ;
+; -1.026 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.056      ;
+; -1.022 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.052      ;
+; -1.021 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.051      ;
+; -1.017 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.047      ;
+; -1.014 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.044      ;
+; -1.011 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.041      ;
+; -1.006 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.036      ;
+; -1.003 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.033      ;
+; -1.001 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.031      ;
+; -1.000 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.030      ;
+; -0.992 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.022      ;
+; -0.988 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.018      ;
+; -0.988 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.018      ;
+; -0.987 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.017      ;
+; -0.983 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.013      ;
+; -0.977 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.007      ;
+; -0.972 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.002      ;
+; -0.969 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.999      ;
+; -0.967 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.997      ;
+; -0.967 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.997      ;
+; -0.958 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.988      ;
+; -0.957 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.987      ;
+; -0.954 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.984      ;
+; -0.954 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.984      ;
+; -0.953 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.983      ;
+; -0.943 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.973      ;
+; -0.938 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.968      ;
+; -0.935 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.965      ;
+; -0.933 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.963      ;
+; -0.933 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.963      ;
+; -0.924 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.954      ;
+; -0.923 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.953      ;
+; -0.923 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.953      ;
+; -0.920 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.950      ;
+; -0.920 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.950      ;
+; -0.920 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.950      ;
+; -0.919 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.949      ;
+; -0.909 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.939      ;
+; -0.909 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.939      ;
+; -0.904 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.934      ;
+; -0.901 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.931      ;
+; -0.899 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.929      ;
+; -0.899 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.929      ;
+; -0.892 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.922      ;
+; -0.889 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.919      ;
+; -0.889 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.919      ;
+; -0.886 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.916      ;
+; -0.886 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.916      ;
+; -0.886 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.916      ;
+; -0.885 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.915      ;
+; -0.875 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.905      ;
+; -0.875 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.905      ;
+; -0.867 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.897      ;
+; -0.865 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.895      ;
+; -0.865 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.895      ;
+; -0.861 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.891      ;
+; -0.858 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.888      ;
+; -0.855 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.855 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.852 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.852 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.852 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.841 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.871      ;
+; -0.841 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.871      ;
+; -0.833 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.863      ;
+; -0.831 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.861      ;
+; -0.831 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.861      ;
+; -0.827 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.857      ;
+; -0.824 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.854      ;
+; -0.821 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.851      ;
+; -0.821 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.851      ;
+; -0.818 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.818 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.813 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.843      ;
+; -0.807 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.837      ;
+; -0.803 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[7] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.833      ;
+; -0.799 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.829      ;
+; -0.797 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.827      ;
+; -0.794 ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.824      ;
+; -0.793 ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.823      ;
++--------+-------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                            ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                        ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.203 ; sad_bc:bc_inst|state.S0                          ; sad_bc:bc_inst|state.S0                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.351      ;
+; 0.229 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.377      ;
+; 0.233 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; sad_bc:bc_inst|state.S3                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.381      ;
+; 0.233 ; sad_bc:bc_inst|state.S3                          ; sad_bc:bc_inst|state.S4                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.381      ;
+; 0.234 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; sad_bc:bc_inst|state.S5                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.382      ;
+; 0.308 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.456      ;
+; 0.308 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.456      ;
+; 0.309 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.457      ;
+; 0.310 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.458      ;
+; 0.310 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.458      ;
+; 0.310 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.458      ;
+; 0.336 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.484      ;
+; 0.338 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.486      ;
+; 0.339 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.487      ;
+; 0.340 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.488      ;
+; 0.340 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.488      ;
+; 0.341 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.489      ;
+; 0.341 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.489      ;
+; 0.342 ; sad_bc:bc_inst|state.S5                          ; sad_bc:bc_inst|state.S0                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.344 ; sad_bc:bc_inst|state.S0                          ; sad_bc:bc_inst|state.S1                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.492      ;
+; 0.349 ; sad_bc:bc_inst|state.S2                          ; sad_bc:bc_inst|state.S3                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.497      ;
+; 0.350 ; sad_bc:bc_inst|state.S2                          ; sad_bc:bc_inst|state.S5                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.498      ;
+; 0.351 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.499      ;
+; 0.351 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.499      ;
+; 0.351 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.499      ;
+; 0.352 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.500      ;
+; 0.352 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.500      ;
+; 0.352 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.500      ;
+; 0.353 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.501      ;
+; 0.354 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.502      ;
+; 0.381 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.387 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.535      ;
+; 0.387 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.535      ;
+; 0.388 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.536      ;
+; 0.390 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.538      ;
+; 0.391 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.539      ;
+; 0.393 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.541      ;
+; 0.404 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.552      ;
+; 0.421 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.569      ;
+; 0.425 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.573      ;
+; 0.427 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.575      ;
+; 0.428 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.576      ;
+; 0.461 ; sad_bc:bc_inst|state.S4                          ; sad_bc:bc_inst|state.S2                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.609      ;
+; 0.468 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.616      ;
+; 0.470 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.618      ;
+; 0.471 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.619      ;
+; 0.472 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.620      ;
+; 0.472 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.620      ;
+; 0.473 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.621      ;
+; 0.473 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.621      ;
+; 0.484 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.632      ;
+; 0.484 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.632      ;
+; 0.484 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.632      ;
+; 0.485 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.633      ;
+; 0.485 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.633      ;
+; 0.485 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.633      ;
+; 0.486 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.634      ;
+; 0.487 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_bc:bc_inst|state.S1                          ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.502 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.504 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.505 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.506 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.654      ;
+; 0.506 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.654      ;
+; 0.507 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.507 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.511 ; sad_bc:bc_inst|state.S1                          ; sad_bc:bc_inst|state.S2                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.659      ;
+; 0.518 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.518 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.518 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.519 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.667      ;
+; 0.520 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.536 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.538 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.540 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.540 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.541 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.689      ;
+; 0.552 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.700      ;
+; 0.552 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.700      ;
+; 0.552 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.700      ;
+; 0.554 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.558 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.560 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.708      ;
+; 0.561 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.709      ;
+; 0.570 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.572 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.720      ;
+; 0.574 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.574 ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.575 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.723      ;
+; 0.576 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.724      ;
+; 0.586 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.586 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.592 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.740      ;
+; 0.594 ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.742      ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S0                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S0                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S1                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S1                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S2                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S2                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S3                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S3                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S4                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S4                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bc:bc_inst|state.S5                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bc:bc_inst|state.S5                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg1_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg2_inst|q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg3_inst|q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg4_inst|q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_bo:bo_inst|unsigned_register:reg5_inst|q[2]  ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; enable         ; clk        ; 1.844  ; 1.844  ; Rise       ; clk             ;
+; sample_can[*]  ; clk        ; 2.019  ; 2.019  ; Rise       ; clk             ;
+;  sample_can[0] ; clk        ; 1.697  ; 1.697  ; Rise       ; clk             ;
+;  sample_can[1] ; clk        ; -0.275 ; -0.275 ; Rise       ; clk             ;
+;  sample_can[2] ; clk        ; 1.809  ; 1.809  ; Rise       ; clk             ;
+;  sample_can[3] ; clk        ; 1.716  ; 1.716  ; Rise       ; clk             ;
+;  sample_can[4] ; clk        ; 2.019  ; 2.019  ; Rise       ; clk             ;
+;  sample_can[5] ; clk        ; 1.712  ; 1.712  ; Rise       ; clk             ;
+;  sample_can[6] ; clk        ; 2.004  ; 2.004  ; Rise       ; clk             ;
+;  sample_can[7] ; clk        ; 2.012  ; 2.012  ; Rise       ; clk             ;
+; sample_ori[*]  ; clk        ; 2.104  ; 2.104  ; Rise       ; clk             ;
+;  sample_ori[0] ; clk        ; 1.921  ; 1.921  ; Rise       ; clk             ;
+;  sample_ori[1] ; clk        ; -0.292 ; -0.292 ; Rise       ; clk             ;
+;  sample_ori[2] ; clk        ; 1.985  ; 1.985  ; Rise       ; clk             ;
+;  sample_ori[3] ; clk        ; 2.103  ; 2.103  ; Rise       ; clk             ;
+;  sample_ori[4] ; clk        ; 2.015  ; 2.015  ; Rise       ; clk             ;
+;  sample_ori[5] ; clk        ; 2.104  ; 2.104  ; Rise       ; clk             ;
+;  sample_ori[6] ; clk        ; 2.005  ; 2.005  ; Rise       ; clk             ;
+;  sample_ori[7] ; clk        ; 1.832  ; 1.832  ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; enable         ; clk        ; -1.724 ; -1.724 ; Rise       ; clk             ;
+; sample_can[*]  ; clk        ; 0.393  ; 0.393  ; Rise       ; clk             ;
+;  sample_can[0] ; clk        ; -1.579 ; -1.579 ; Rise       ; clk             ;
+;  sample_can[1] ; clk        ; 0.393  ; 0.393  ; Rise       ; clk             ;
+;  sample_can[2] ; clk        ; -1.691 ; -1.691 ; Rise       ; clk             ;
+;  sample_can[3] ; clk        ; -1.598 ; -1.598 ; Rise       ; clk             ;
+;  sample_can[4] ; clk        ; -1.901 ; -1.901 ; Rise       ; clk             ;
+;  sample_can[5] ; clk        ; -1.594 ; -1.594 ; Rise       ; clk             ;
+;  sample_can[6] ; clk        ; -1.886 ; -1.886 ; Rise       ; clk             ;
+;  sample_can[7] ; clk        ; -1.894 ; -1.894 ; Rise       ; clk             ;
+; sample_ori[*]  ; clk        ; 0.410  ; 0.410  ; Rise       ; clk             ;
+;  sample_ori[0] ; clk        ; -1.803 ; -1.803 ; Rise       ; clk             ;
+;  sample_ori[1] ; clk        ; 0.410  ; 0.410  ; Rise       ; clk             ;
+;  sample_ori[2] ; clk        ; -1.867 ; -1.867 ; Rise       ; clk             ;
+;  sample_ori[3] ; clk        ; -1.985 ; -1.985 ; Rise       ; clk             ;
+;  sample_ori[4] ; clk        ; -1.897 ; -1.897 ; Rise       ; clk             ;
+;  sample_ori[5] ; clk        ; -1.986 ; -1.986 ; Rise       ; clk             ;
+;  sample_ori[6] ; clk        ; -1.887 ; -1.887 ; Rise       ; clk             ;
+;  sample_ori[7] ; clk        ; -1.714 ; -1.714 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clk        ; 3.362 ; 3.362 ; Rise       ; clk             ;
+;  address[0]    ; clk        ; 3.260 ; 3.260 ; Rise       ; clk             ;
+;  address[1]    ; clk        ; 3.251 ; 3.251 ; Rise       ; clk             ;
+;  address[2]    ; clk        ; 3.281 ; 3.281 ; Rise       ; clk             ;
+;  address[3]    ; clk        ; 3.350 ; 3.350 ; Rise       ; clk             ;
+;  address[4]    ; clk        ; 3.362 ; 3.362 ; Rise       ; clk             ;
+;  address[5]    ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+; done           ; clk        ; 3.251 ; 3.251 ; Rise       ; clk             ;
+; read_mem       ; clk        ; 3.358 ; 3.358 ; Rise       ; clk             ;
+; sad_value[*]   ; clk        ; 3.410 ; 3.410 ; Rise       ; clk             ;
+;  sad_value[0]  ; clk        ; 3.340 ; 3.340 ; Rise       ; clk             ;
+;  sad_value[1]  ; clk        ; 3.377 ; 3.377 ; Rise       ; clk             ;
+;  sad_value[2]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_value[3]  ; clk        ; 3.378 ; 3.378 ; Rise       ; clk             ;
+;  sad_value[4]  ; clk        ; 3.374 ; 3.374 ; Rise       ; clk             ;
+;  sad_value[5]  ; clk        ; 3.356 ; 3.356 ; Rise       ; clk             ;
+;  sad_value[6]  ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  sad_value[7]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_value[8]  ; clk        ; 3.320 ; 3.320 ; Rise       ; clk             ;
+;  sad_value[9]  ; clk        ; 3.265 ; 3.265 ; Rise       ; clk             ;
+;  sad_value[10] ; clk        ; 3.300 ; 3.300 ; Rise       ; clk             ;
+;  sad_value[11] ; clk        ; 3.410 ; 3.410 ; Rise       ; clk             ;
+;  sad_value[12] ; clk        ; 3.194 ; 3.194 ; Rise       ; clk             ;
+;  sad_value[13] ; clk        ; 3.256 ; 3.256 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+;  address[0]    ; clk        ; 3.260 ; 3.260 ; Rise       ; clk             ;
+;  address[1]    ; clk        ; 3.251 ; 3.251 ; Rise       ; clk             ;
+;  address[2]    ; clk        ; 3.281 ; 3.281 ; Rise       ; clk             ;
+;  address[3]    ; clk        ; 3.350 ; 3.350 ; Rise       ; clk             ;
+;  address[4]    ; clk        ; 3.362 ; 3.362 ; Rise       ; clk             ;
+;  address[5]    ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+; done           ; clk        ; 3.251 ; 3.251 ; Rise       ; clk             ;
+; read_mem       ; clk        ; 3.358 ; 3.358 ; Rise       ; clk             ;
+; sad_value[*]   ; clk        ; 3.194 ; 3.194 ; Rise       ; clk             ;
+;  sad_value[0]  ; clk        ; 3.340 ; 3.340 ; Rise       ; clk             ;
+;  sad_value[1]  ; clk        ; 3.377 ; 3.377 ; Rise       ; clk             ;
+;  sad_value[2]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_value[3]  ; clk        ; 3.378 ; 3.378 ; Rise       ; clk             ;
+;  sad_value[4]  ; clk        ; 3.374 ; 3.374 ; Rise       ; clk             ;
+;  sad_value[5]  ; clk        ; 3.356 ; 3.356 ; Rise       ; clk             ;
+;  sad_value[6]  ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  sad_value[7]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_value[8]  ; clk        ; 3.320 ; 3.320 ; Rise       ; clk             ;
+;  sad_value[9]  ; clk        ; 3.265 ; 3.265 ; Rise       ; clk             ;
+;  sad_value[10] ; clk        ; 3.300 ; 3.300 ; Rise       ; clk             ;
+;  sad_value[11] ; clk        ; 3.410 ; 3.410 ; Rise       ; clk             ;
+;  sad_value[12] ; clk        ; 3.194 ; 3.194 ; Rise       ; clk             ;
+;  sad_value[13] ; clk        ; 3.256 ; 3.256 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -5.097   ; 0.203 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -5.097   ; 0.203 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -108.712 ; 0.0   ; 0.0      ; 0.0     ; -71.285             ;
+;  clk             ; -108.712 ; 0.000 ; N/A      ; N/A     ; -71.285             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; enable         ; clk        ; 3.944  ; 3.944  ; Rise       ; clk             ;
+; sample_can[*]  ; clk        ; 4.310  ; 4.310  ; Rise       ; clk             ;
+;  sample_can[0] ; clk        ; 3.501  ; 3.501  ; Rise       ; clk             ;
+;  sample_can[1] ; clk        ; -0.033 ; -0.033 ; Rise       ; clk             ;
+;  sample_can[2] ; clk        ; 3.833  ; 3.833  ; Rise       ; clk             ;
+;  sample_can[3] ; clk        ; 3.523  ; 3.523  ; Rise       ; clk             ;
+;  sample_can[4] ; clk        ; 4.310  ; 4.310  ; Rise       ; clk             ;
+;  sample_can[5] ; clk        ; 3.523  ; 3.523  ; Rise       ; clk             ;
+;  sample_can[6] ; clk        ; 4.250  ; 4.250  ; Rise       ; clk             ;
+;  sample_can[7] ; clk        ; 4.296  ; 4.296  ; Rise       ; clk             ;
+; sample_ori[*]  ; clk        ; 4.588  ; 4.588  ; Rise       ; clk             ;
+;  sample_ori[0] ; clk        ; 4.144  ; 4.144  ; Rise       ; clk             ;
+;  sample_ori[1] ; clk        ; 0.092  ; 0.092  ; Rise       ; clk             ;
+;  sample_ori[2] ; clk        ; 4.276  ; 4.276  ; Rise       ; clk             ;
+;  sample_ori[3] ; clk        ; 4.588  ; 4.588  ; Rise       ; clk             ;
+;  sample_ori[4] ; clk        ; 4.306  ; 4.306  ; Rise       ; clk             ;
+;  sample_ori[5] ; clk        ; 4.572  ; 4.572  ; Rise       ; clk             ;
+;  sample_ori[6] ; clk        ; 4.283  ; 4.283  ; Rise       ; clk             ;
+;  sample_ori[7] ; clk        ; 3.919  ; 3.919  ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; enable         ; clk        ; -1.724 ; -1.724 ; Rise       ; clk             ;
+; sample_can[*]  ; clk        ; 0.393  ; 0.393  ; Rise       ; clk             ;
+;  sample_can[0] ; clk        ; -1.579 ; -1.579 ; Rise       ; clk             ;
+;  sample_can[1] ; clk        ; 0.393  ; 0.393  ; Rise       ; clk             ;
+;  sample_can[2] ; clk        ; -1.691 ; -1.691 ; Rise       ; clk             ;
+;  sample_can[3] ; clk        ; -1.598 ; -1.598 ; Rise       ; clk             ;
+;  sample_can[4] ; clk        ; -1.901 ; -1.901 ; Rise       ; clk             ;
+;  sample_can[5] ; clk        ; -1.594 ; -1.594 ; Rise       ; clk             ;
+;  sample_can[6] ; clk        ; -1.886 ; -1.886 ; Rise       ; clk             ;
+;  sample_can[7] ; clk        ; -1.894 ; -1.894 ; Rise       ; clk             ;
+; sample_ori[*]  ; clk        ; 0.410  ; 0.410  ; Rise       ; clk             ;
+;  sample_ori[0] ; clk        ; -1.803 ; -1.803 ; Rise       ; clk             ;
+;  sample_ori[1] ; clk        ; 0.410  ; 0.410  ; Rise       ; clk             ;
+;  sample_ori[2] ; clk        ; -1.867 ; -1.867 ; Rise       ; clk             ;
+;  sample_ori[3] ; clk        ; -1.985 ; -1.985 ; Rise       ; clk             ;
+;  sample_ori[4] ; clk        ; -1.897 ; -1.897 ; Rise       ; clk             ;
+;  sample_ori[5] ; clk        ; -1.986 ; -1.986 ; Rise       ; clk             ;
+;  sample_ori[6] ; clk        ; -1.887 ; -1.887 ; Rise       ; clk             ;
+;  sample_ori[7] ; clk        ; -1.714 ; -1.714 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  address[0]    ; clk        ; 6.805 ; 6.805 ; Rise       ; clk             ;
+;  address[1]    ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+;  address[2]    ; clk        ; 6.825 ; 6.825 ; Rise       ; clk             ;
+;  address[3]    ; clk        ; 7.086 ; 7.086 ; Rise       ; clk             ;
+;  address[4]    ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  address[5]    ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+; done           ; clk        ; 6.796 ; 6.796 ; Rise       ; clk             ;
+; read_mem       ; clk        ; 7.260 ; 7.260 ; Rise       ; clk             ;
+; sad_value[*]   ; clk        ; 7.156 ; 7.156 ; Rise       ; clk             ;
+;  sad_value[0]  ; clk        ; 7.043 ; 7.043 ; Rise       ; clk             ;
+;  sad_value[1]  ; clk        ; 7.112 ; 7.112 ; Rise       ; clk             ;
+;  sad_value[2]  ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
+;  sad_value[3]  ; clk        ; 7.117 ; 7.117 ; Rise       ; clk             ;
+;  sad_value[4]  ; clk        ; 7.108 ; 7.108 ; Rise       ; clk             ;
+;  sad_value[5]  ; clk        ; 7.074 ; 7.074 ; Rise       ; clk             ;
+;  sad_value[6]  ; clk        ; 6.798 ; 6.798 ; Rise       ; clk             ;
+;  sad_value[7]  ; clk        ; 6.805 ; 6.805 ; Rise       ; clk             ;
+;  sad_value[8]  ; clk        ; 7.086 ; 7.086 ; Rise       ; clk             ;
+;  sad_value[9]  ; clk        ; 6.830 ; 6.830 ; Rise       ; clk             ;
+;  sad_value[10] ; clk        ; 7.049 ; 7.049 ; Rise       ; clk             ;
+;  sad_value[11] ; clk        ; 7.156 ; 7.156 ; Rise       ; clk             ;
+;  sad_value[12] ; clk        ; 6.726 ; 6.726 ; Rise       ; clk             ;
+;  sad_value[13] ; clk        ; 6.793 ; 6.793 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+;  address[0]    ; clk        ; 3.260 ; 3.260 ; Rise       ; clk             ;
+;  address[1]    ; clk        ; 3.251 ; 3.251 ; Rise       ; clk             ;
+;  address[2]    ; clk        ; 3.281 ; 3.281 ; Rise       ; clk             ;
+;  address[3]    ; clk        ; 3.350 ; 3.350 ; Rise       ; clk             ;
+;  address[4]    ; clk        ; 3.362 ; 3.362 ; Rise       ; clk             ;
+;  address[5]    ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+; done           ; clk        ; 3.251 ; 3.251 ; Rise       ; clk             ;
+; read_mem       ; clk        ; 3.358 ; 3.358 ; Rise       ; clk             ;
+; sad_value[*]   ; clk        ; 3.194 ; 3.194 ; Rise       ; clk             ;
+;  sad_value[0]  ; clk        ; 3.340 ; 3.340 ; Rise       ; clk             ;
+;  sad_value[1]  ; clk        ; 3.377 ; 3.377 ; Rise       ; clk             ;
+;  sad_value[2]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_value[3]  ; clk        ; 3.378 ; 3.378 ; Rise       ; clk             ;
+;  sad_value[4]  ; clk        ; 3.374 ; 3.374 ; Rise       ; clk             ;
+;  sad_value[5]  ; clk        ; 3.356 ; 3.356 ; Rise       ; clk             ;
+;  sad_value[6]  ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  sad_value[7]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_value[8]  ; clk        ; 3.320 ; 3.320 ; Rise       ; clk             ;
+;  sad_value[9]  ; clk        ; 3.265 ; 3.265 ; Rise       ; clk             ;
+;  sad_value[10] ; clk        ; 3.300 ; 3.300 ; Rise       ; clk             ;
+;  sad_value[11] ; clk        ; 3.410 ; 3.410 ; Rise       ; clk             ;
+;  sad_value[12] ; clk        ; 3.194 ; 3.194 ; Rise       ; clk             ;
+;  sad_value[13] ; clk        ; 3.256 ; 3.256 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2937     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2937     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 18    ; 18   ;
+; Unconstrained Input Port Paths  ; 24    ; 24   ;
+; Unconstrained Output Ports      ; 22    ; 22   ;
+; Unconstrained Output Port Paths ; 22    ; 22   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu May 29 09:37:49 2025
+Info: Command: quartus_sta sad -c sad
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 125 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'sad.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.097
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.097      -108.712 clk 
+Info (332146): Worst-case hold slack is 0.460
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.460         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -71.285 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.184
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.184       -12.931 clk 
+Info (332146): Worst-case hold slack is 0.203
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.203         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -58.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 526 megabytes
+    Info: Processing ended: Thu May 29 09:37:49 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
