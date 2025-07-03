@@ -20,7 +20,7 @@ Entrada:        Saída:
 
 No projeto, os dados são lidos sequencialmente, armazenados em memória interna e, após o carregamento completo, a FSM passa para o estado de escrita da transposta, também feita sequencialmente.
 
-### ✅ Parametrização
+### Parametrização
 
 Os principais parâmetros estão definidos no pacote `matrix_pack.vhdl`:
 - `matrix_order` (ex: 3) — Define a ordem da matriz (n × n).
@@ -48,9 +48,13 @@ matrix_transpose/
 
 ---
 
+<img src="../../assets/diagram.png" width=400><br><sub>Diagrama 01</sub>
+
+---
+
 ## Como Utilizar
 
-### 🧪 Simulação
+### Simulação
 
 1. Configure o projeto no Quartus ou ModelSim.
 2. Compile todos os arquivos do projeto (`matrix_pack`, `transpose_bo`, `transpose_bc`, `transpose`).
